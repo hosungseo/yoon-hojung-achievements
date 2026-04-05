@@ -119,30 +119,6 @@ export const categories: Category[] = [
           },
         ],
       },
-      {
-        id: "honors-justice",
-        title: "훈포장 재수여 · 부적절 인물 서훈 취소",
-        lead: "국가의 상훈을 바로세우다",
-        description:
-          "비상계엄 당시 훈포장을 거부했던 의인들에게 훈포장을 다시 수여하고, 과거 부적절하게 수여된 서훈을 취소하는 작업을 진행했습니다. 국가가 누구를 기억하고 누구에게 명예를 부여할 것인지에 대한 기준을 다시 세웠습니다.",
-        sources: [
-          {
-            label: "12·12군사반란 주요임무 종사자 무공훈장 취소 추진",
-            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156750611",
-            publisher: "대한민국 정책브리핑",
-          },
-          {
-            label: "12·12 군사반란 주요임무 종사자 10명 무공훈장 취소",
-            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148961350",
-            publisher: "대한민국 정책브리핑",
-          },
-          {
-            label: "\"윤석열이 준 훈장, 줘도 안 받아\"…공직자 781명, 새 정부서 재수훈",
-            url: "https://www.khan.co.kr/article/202603042054005/",
-            publisher: "경향신문",
-          },
-        ],
-      },
     ],
   },
 
@@ -719,19 +695,29 @@ export const categories: Category[] = [
       },
       {
         id: "honor-restoration",
-        title: "훈포장 재수여 · 서훈 취소",
-        lead: "국가의 명예를 바로세우다",
+        title: "훈포장 재수여 · 부적절 인물 서훈 취소",
+        lead: "국가의 상훈을 바로세우다",
         description:
-          "과거 훈포장을 거부했던 의인들에게 훈포장을 다시 수여하는 절차를 추진하고, 부적절하게 서훈된 인물의 서훈을 취소했습니다. 국가가 누구를 명예롭게 기억할 것인지의 기준을 다시 세웠습니다.",
+          "비상계엄 당시 훈포장을 거부했던 의인과 새 정부 들어 공직자 781명에게 훈포장을 다시 수여하고, 12·12 군사반란 주요임무 종사자의 무공훈장 등 과거 부적절하게 수여된 서훈을 취소했습니다. 국가가 누구를 기억하고 누구에게 명예를 부여할 것인지의 기준을 다시 세웠습니다.",
         sources: [
-          {
-            label: "\"12·3 비상계엄 항거 시민 예우\"…대통령 직속 '빛의 위원회' 설치",
-            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148960604",
-            publisher: "대한민국 정책브리핑",
-          },
           {
             label: "12·12군사반란 주요임무 종사자 무공훈장 취소 추진",
             url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156750611",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "12·12 군사반란 주요임무 종사자 10명 무공훈장 취소",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148961350",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "\"윤석열이 준 훈장, 줘도 안 받아\"…공직자 781명, 새 정부서 재수훈",
+            url: "https://www.khan.co.kr/article/202603042054005/",
+            publisher: "경향신문",
+          },
+          {
+            label: "\"12·3 비상계엄 항거 시민 예우\"…대통령 직속 '빛의 위원회' 설치",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148960604",
             publisher: "대한민국 정책브리핑",
           },
         ],
