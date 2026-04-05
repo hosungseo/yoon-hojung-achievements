@@ -27,10 +27,10 @@ export default function CategoryTimeline({ category }: Props) {
         <div className={`mb-16 ${category.color.accent}`}>
           <ImageSlot
             label="01 · GOVERNMENT REFORM"
-            caption="시장상황점검회의 주재"
+            caption="정부서울청사 서울상황센터 회의 주재"
             accent={category.color.accent}
             src={asset("/photos/01-gov-reform.jpg")}
-            alt="윤호중 장관 시장상황점검회의 주재"
+            alt="윤호중 행정안전부 장관 정부서울청사 서울상황센터 주재 회의"
             credit="출처 : 행정안전부 · 정책브리핑"
           />
         </div>
