@@ -120,14 +120,14 @@ export default function CategoryPhoneDemo({ category }: Props) {
                   })}
                 </svg>
                 {/* Number overlay inside the ring */}
-                <div className="pointer-events-none absolute inset-0 flex items-baseline justify-center">
-                  <div className="flex items-baseline gap-1">
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-baseline gap-1 leading-none">
                     <CountUp
                       value="15"
                       duration={1.8}
-                      className={`text-display text-[clamp(3.5rem,12vw,6rem)] leading-none ${category.color.accent}`}
+                      className={`text-display text-[clamp(3rem,10vw,5.5rem)] leading-none ${category.color.accent}`}
                     />
-                    <div className="text-xl font-bold md:text-2xl">초</div>
+                    <div className="text-lg font-bold md:text-xl">초</div>
                   </div>
                 </div>
               </div>
