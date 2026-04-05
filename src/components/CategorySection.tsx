@@ -8,7 +8,19 @@ import { asset } from "@/lib/asset";
 
 const categoryImageHints: Record<
   string,
-  { label: string; caption: string; src: string; alt: string; aspect?: string }
+  {
+    label: string;
+    caption: string;
+    src: string;
+    alt: string;
+    aspect?: string;
+    secondary?: {
+      label: string;
+      caption: string;
+      src: string;
+      alt: string;
+    };
+  }
 > = {
   "democracy-restoration": {
     label: "06 · DEMOCRACY RESTORED",
@@ -16,12 +28,24 @@ const categoryImageHints: Record<
     src: asset("/photos/06-democracy.jpg"),
     alt: "윤호중 장관 사회연대경제 정책 현장 방문",
     aspect: "aspect-[8/5]",
+    secondary: {
+      label: "FIELD · 06",
+      caption: "광주 사회적경제 현장",
+      src: asset("/photos/06-democracy-2.jpg"),
+      alt: "윤호중 장관 광주 사회적경제 현장",
+    },
   },
   "new-ministry": {
     label: "07 · NEW MINISTRY",
     caption: "고향사랑기부 및 마약범죄 근절 현장점검",
     src: asset("/photos/07-new-ministry.jpg"),
     alt: "윤호중 장관 제주 현장점검",
+    secondary: {
+      label: "FIELD · 07",
+      caption: "제주 현장점검",
+      src: asset("/photos/07-new-ministry-2.jpg"),
+      alt: "윤호중 장관 제주 현장점검 2",
+    },
   },
 };
 
@@ -109,6 +133,21 @@ export default function CategorySection({ category, index }: Props) {
             </motion.article>
           ))}
         </div>
+
+        {/* Secondary supporting photo */}
+        {categoryImageHints[category.id]?.secondary && (
+          <div className={`mt-20 ${category.color.accent}`}>
+            <ImageSlot
+              label={categoryImageHints[category.id].secondary!.label}
+              caption={categoryImageHints[category.id].secondary!.caption}
+              accent={category.color.accent}
+              src={categoryImageHints[category.id].secondary!.src}
+              alt={categoryImageHints[category.id].secondary!.alt}
+              credit="출처 : 행정안전부 · 정책브리핑"
+              aspect="aspect-[21/9]"
+            />
+          </div>
+        )}
       </div>
     </section>
   );

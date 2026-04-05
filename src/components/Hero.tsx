@@ -69,9 +69,9 @@ export default function Hero() {
           label="YOON HO-JOONG"
           caption="제5대 행정안전부 장관"
           accent="text-amber-300"
-          src={asset("/photos/minister-portrait.png")}
+          src={asset("/photos/minister-portrait-hires.jpg")}
           alt="윤호중 행정안전부 장관 공식 사진"
-          credit="출처 : 행정안전부"
+          credit="출처 : 연합뉴스"
           objectPosition="center top"
         />
       </div>

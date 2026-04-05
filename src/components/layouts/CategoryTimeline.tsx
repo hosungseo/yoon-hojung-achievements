@@ -119,6 +119,19 @@ export default function CategoryTimeline({ category }: Props) {
           </ol>
         </div>
 
+        {/* Secondary supporting photo */}
+        <div className={`mb-16 ${category.color.accent}`}>
+          <ImageSlot
+            label="FIELD · 01"
+            caption="정부서울청사 상황센터 현장"
+            accent={category.color.accent}
+            src={asset("/photos/01-gov-reform-2.jpg")}
+            alt="윤호중 장관 정부서울청사 현장"
+            credit="출처 : 행정안전부 · 정책브리핑"
+            aspect="aspect-[21/9]"
+          />
+        </div>
+
         {/* Achievement cards */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {category.achievements.map((a, i) => (

@@ -226,6 +226,19 @@ export default function CategoryPhoneDemo({ category }: Props) {
           </div>
         </div>
 
+        {/* Secondary supporting photo */}
+        <div className={`mt-24 ${category.color.accent}`}>
+          <ImageSlot
+            label="FIELD · 04"
+            caption="AI 딥페이크 탐지 시연 현장"
+            accent={category.color.accent}
+            src={asset("/photos/04-ai-democracy-2.jpg")}
+            alt="AI 딥페이크 탐지 분석모델 시연"
+            credit="출처 : 행정안전부 · 정책브리핑"
+            aspect="aspect-[21/9]"
+          />
+        </div>
+
         {/* Achievement cards */}
         <div className="mt-24 border-t border-white/15 pt-16">
           <div className="mb-10 text-xs font-bold tracking-[0.3em] opacity-60">

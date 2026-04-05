@@ -345,6 +345,19 @@ export default function CategoryMapMerge({ category }: Props) {
           </div>
         </div>
 
+        {/* Secondary supporting photo */}
+        <div className={`mt-24 ${category.color.accent}`}>
+          <ImageSlot
+            label="FIELD · 03"
+            caption="지방소멸 대응 현장"
+            accent={category.color.accent}
+            src={asset("/photos/03-decentralization-2.jpg")}
+            alt="윤호중 장관 지방소멸 대응 현장"
+            credit="출처 : 행정안전부 · 정책브리핑"
+            aspect="aspect-[21/9]"
+          />
+        </div>
+
         {/* Achievements as simple rows */}
         <div className="mt-24 border-t border-white/15 pt-16">
           <div className="mb-10 text-xs font-bold tracking-[0.3em] opacity-60">

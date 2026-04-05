@@ -87,6 +87,19 @@ export default function CategoryBigNumber({ category }: Props) {
           ))}
         </div>
 
+        {/* Secondary supporting photo */}
+        <div className={`mb-16 ${category.color.accent}`}>
+          <ImageSlot
+            label="FIELD · 02"
+            caption="민생회복 현장 · 지역 방문"
+            accent={category.color.accent}
+            src={asset("/photos/02-livelihood-2.jpg")}
+            alt="윤호중 장관 민생 현장 방문"
+            credit="출처 : 행정안전부 · 정책브리핑"
+            aspect="aspect-[21/9]"
+          />
+        </div>
+
         {/* Achievements — alternating rows, not grid */}
         <div className="space-y-12">
           {category.achievements.map((a, i) => (
