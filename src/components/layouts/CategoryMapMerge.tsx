@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import SourceLinks from "@/components/SourceLinks";
 import { asset } from "@/lib/asset";
 
 // 2025년 행정안전부 주민등록 인구 기준 (단위: 만 명, 소수점 첫째 자리 반올림)
@@ -369,6 +370,11 @@ export default function CategoryMapMerge({ category }: Props) {
                 <p className="mt-3 text-sm leading-relaxed opacity-75">
                   {a.description}
                 </p>
+                <SourceLinks
+                  sources={a.sources}
+                  accent={category.color.accent}
+                  compact
+                />
               </motion.article>
             ))}
           </div>

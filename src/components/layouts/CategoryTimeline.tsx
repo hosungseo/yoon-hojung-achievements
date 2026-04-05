@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import SourceLinks from "@/components/SourceLinks";
 import { asset } from "@/lib/asset";
 
 const historicalEvents = [
@@ -148,6 +149,11 @@ export default function CategoryTimeline({ category }: Props) {
                   {a.impact}
                 </div>
               )}
+              <SourceLinks
+                sources={a.sources}
+                accent={category.color.accent}
+                compact
+              />
             </motion.article>
           ))}
         </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import ImageSlot from "./ImageSlot";
+import SourceLinks from "./SourceLinks";
 import { asset } from "@/lib/asset";
 
 const categoryImageHints: Record<
@@ -104,6 +105,7 @@ export default function CategorySection({ category, index }: Props) {
                   <span className={category.color.accent}>{a.impact}</span>
                 </div>
               )}
+              <SourceLinks sources={a.sources} accent={category.color.accent} />
             </motion.article>
           ))}
         </div>

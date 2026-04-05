@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import ImageSlot from "@/components/ImageSlot";
+import SourceLinks from "@/components/SourceLinks";
 import { asset } from "@/lib/asset";
 
 type Props = { category: Category };
@@ -213,6 +214,11 @@ export default function CategoryGauge({ category }: Props) {
                   {a.title}
                 </h3>
                 <p className="mt-2 text-xs opacity-60">{a.lead}</p>
+                <SourceLinks
+                  sources={a.sources}
+                  accent={category.color.accent}
+                  compact
+                />
               </motion.article>
             ))}
           </div>

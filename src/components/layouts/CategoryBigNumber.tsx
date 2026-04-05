@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import SourceLinks from "@/components/SourceLinks";
 import { asset } from "@/lib/asset";
 
 type Props = { category: Category };
@@ -124,6 +125,10 @@ export default function CategoryBigNumber({ category }: Props) {
                     {a.impact}
                   </div>
                 )}
+                <SourceLinks
+                  sources={a.sources}
+                  accent={category.color.accent}
+                />
               </div>
             </motion.article>
           ))}
