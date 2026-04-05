@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
+import CountUp from "@/components/CountUp";
+import ImageSlot from "@/components/ImageSlot";
 
 type Props = { category: Category };
 
@@ -19,6 +21,15 @@ export default function CategoryPhoneDemo({ category }: Props) {
       className={`relative overflow-hidden ${category.color.bg} ${category.color.text}`}
     >
       <div className="mx-auto max-w-7xl px-6 py-32 md:px-12 md:py-40">
+        {/* Header image slot */}
+        <div className={`mb-16 ${category.color.accent}`}>
+          <ImageSlot
+            label="HERO IMAGE · 04 AI 민주정부"
+            caption="판교 개통식 · 키오스크 · 스마트폰 화면 이미지 예정"
+            accent={category.color.accent}
+          />
+        </div>
+
         <div className="grid gap-16 md:grid-cols-2 md:items-center md:gap-20">
           {/* Left: Text */}
           <motion.div
@@ -39,13 +50,67 @@ export default function CategoryPhoneDemo({ category }: Props) {
               {category.intro}
             </p>
 
-            <div className="mt-10 flex items-baseline gap-3">
-              <div
-                className={`text-display text-[clamp(4rem,10vw,9rem)] leading-none ${category.color.accent}`}
-              >
-                15
+            <div className="mt-10 flex items-center gap-6">
+              {/* Timer ring */}
+              <div className="relative h-28 w-28 shrink-0 md:h-36 md:w-36">
+                <svg viewBox="-60 -60 120 120" className="h-full w-full">
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r="52"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    opacity="0.15"
+                  />
+                  <motion.circle
+                    cx="0"
+                    cy="0"
+                    r="52"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeDasharray={2 * Math.PI * 52}
+                    initial={{ strokeDashoffset: 2 * Math.PI * 52 }}
+                    whileInView={{ strokeDashoffset: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{
+                      duration: 1.6,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    transform="rotate(-90)"
+                    className={category.color.accent}
+                  />
+                  {/* Tick marks */}
+                  {[...Array(12)].map((_, i) => {
+                    const angle = (i / 12) * Math.PI * 2 - Math.PI / 2;
+                    const x1 = Math.cos(angle) * 44;
+                    const y1 = Math.sin(angle) * 44;
+                    const x2 = Math.cos(angle) * 48;
+                    const y2 = Math.sin(angle) * 48;
+                    return (
+                      <line
+                        key={i}
+                        x1={x1}
+                        y1={y1}
+                        x2={x2}
+                        y2={y2}
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        opacity="0.3"
+                      />
+                    );
+                  })}
+                </svg>
               </div>
-              <div className="text-2xl font-bold">초</div>
+              <div className="flex items-baseline gap-2">
+                <CountUp
+                  value="15"
+                  className={`text-display text-[clamp(4rem,10vw,9rem)] leading-none ${category.color.accent}`}
+                />
+                <div className="text-2xl font-bold">초</div>
+              </div>
             </div>
             <div className="mt-2 text-sm opacity-60">
               AI 국민비서 · 주민등록등본 발급 소요시간

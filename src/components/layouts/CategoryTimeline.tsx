@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
+import CountUp from "@/components/CountUp";
+import ImageSlot from "@/components/ImageSlot";
 
 const historicalEvents = [
   { year: "1948", label: "검찰청 창설", tone: "neutral" },
@@ -20,6 +22,15 @@ export default function CategoryTimeline({ category }: Props) {
       className={`relative overflow-hidden ${category.color.bg} ${category.color.text}`}
     >
       <div className="mx-auto max-w-7xl px-6 py-32 md:px-12 md:py-40">
+        {/* Header image slot */}
+        <div className={`mb-16 ${category.color.accent}`}>
+          <ImageSlot
+            label="HERO IMAGE · 01 정부혁신"
+            caption="국회의사당 · 공문서 · 서명식 이미지 예정"
+            accent={category.color.accent}
+          />
+        </div>
+
         {/* Giant 77 + header split */}
         <div className="mb-20 grid gap-12 md:grid-cols-5 md:gap-16">
           <div className="md:col-span-2">
@@ -30,11 +41,11 @@ export default function CategoryTimeline({ category }: Props) {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
-              <div
+              <CountUp
+                value="77"
+                duration={2}
                 className={`text-display text-[clamp(8rem,18vw,16rem)] leading-[0.8] ${category.color.accent}`}
-              >
-                77
-              </div>
+              />
               <div className="mt-4 text-xl font-bold tracking-widest md:text-2xl">
                 년 만의 변화
               </div>

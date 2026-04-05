@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import CountUp from "./CountUp";
 
 type Props = {
   number: string;
@@ -48,11 +49,11 @@ export default function ImpactNumber({
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-baseline justify-center gap-3"
         >
-          <span
+          <CountUp
+            value={number}
+            duration={1.8}
             className={`text-display text-[clamp(6rem,22vw,18rem)] leading-[0.85] ${accent}`}
-          >
-            {number}
-          </span>
+          />
           {unit && (
             <span className="text-[clamp(2rem,6vw,5rem)] font-black text-white/70">
               {unit}

@@ -2,6 +2,20 @@
 
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
+import CountUp from "@/components/CountUp";
+import ImageSlot from "@/components/ImageSlot";
+
+// 2025년 행정안전부 주민등록 인구 기준 (단위: 만 명, 소수점 첫째 자리 반올림)
+const metroPopulation = [
+  { name: "서울", value: 934, highlight: false },
+  { name: "전남광주통합특별시", value: 320, highlight: true },
+  { name: "부산", value: 325, highlight: false },
+  { name: "인천", value: 302, highlight: false },
+  { name: "대구", value: 231, highlight: false },
+  { name: "대전", value: 142, highlight: false },
+  { name: "광주 (단독)", value: 139, highlight: false },
+  { name: "울산", value: 107, highlight: false },
+];
 
 type Props = { category: Category };
 
@@ -16,6 +30,15 @@ export default function CategoryMapMerge({ category }: Props) {
       className={`relative overflow-hidden ${category.color.bg} ${category.color.text}`}
     >
       <div className="mx-auto max-w-7xl px-6 py-32 md:px-12 md:py-40">
+        {/* Header image slot */}
+        <div className={`mb-16 ${category.color.accent}`}>
+          <ImageSlot
+            label="HERO IMAGE · 03 지방의 미래"
+            caption="전남·광주 일출 · 항공뷰 이미지 예정"
+            accent={category.color.accent}
+          />
+        </div>
+
         <div className="grid gap-16 md:grid-cols-2 md:gap-24 md:items-center">
           {/* Left: text */}
           <motion.div
@@ -37,27 +60,24 @@ export default function CategoryMapMerge({ category }: Props) {
             </p>
             <div className="mt-10 grid grid-cols-3 gap-6 border-t border-white/15 pt-8">
               <div>
-                <div
+                <CountUp
+                  value="320만"
                   className={`text-display text-3xl md:text-4xl ${category.color.accent}`}
-                >
-                  320만
-                </div>
+                />
                 <div className="mt-2 text-xs opacity-60">통합 인구</div>
               </div>
               <div>
-                <div
+                <CountUp
+                  value="40년"
                   className={`text-display text-3xl md:text-4xl ${category.color.accent}`}
-                >
-                  40년
-                </div>
+                />
                 <div className="mt-2 text-xs opacity-60">분리 이후 재결합</div>
               </div>
               <div>
-                <div
+                <CountUp
+                  value="1호"
                   className={`text-display text-3xl md:text-4xl ${category.color.accent}`}
-                >
-                  1호
-                </div>
+                />
                 <div className="mt-2 text-xs opacity-60">통합특별시</div>
               </div>
             </div>
@@ -230,6 +250,66 @@ export default function CategoryMapMerge({ category }: Props) {
                 </marker>
               </defs>
             </svg>
+          </div>
+        </div>
+
+        {/* Metro population comparison bar chart */}
+        <div className="mt-24 border-t border-white/15 pt-16">
+          <div className="mb-3 text-xs font-bold tracking-[0.3em] opacity-60">
+            POPULATION COMPARISON
+          </div>
+          <div className="mb-10 text-lg font-bold md:text-xl">
+            전남광주통합특별시는 단숨에{" "}
+            <span className={category.color.accent}>전국 4위권 광역시</span>로
+            올라섭니다.
+          </div>
+          <div className="space-y-4">
+            {metroPopulation.map((m, i) => {
+              const max = Math.max(...metroPopulation.map((x) => x.value));
+              const pct = (m.value / max) * 100;
+              return (
+                <div
+                  key={m.name}
+                  className="grid grid-cols-[7rem_1fr_4rem] items-center gap-4 md:grid-cols-[11rem_1fr_5rem]"
+                >
+                  <div
+                    className={`text-xs font-bold md:text-sm ${
+                      m.highlight ? category.color.accent : "opacity-75"
+                    }`}
+                  >
+                    {m.name}
+                  </div>
+                  <div className="relative h-5 overflow-hidden bg-white/5">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${pct}%` }}
+                      viewport={{ once: true, margin: "-80px" }}
+                      transition={{
+                        duration: 1.3,
+                        delay: 0.1 + i * 0.08,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
+                      className={`absolute inset-y-0 left-0 ${
+                        m.highlight
+                          ? category.color.accent.replace("text-", "bg-")
+                          : "bg-white/25"
+                      }`}
+                    />
+                  </div>
+                  <div
+                    className={`text-right text-xs font-bold md:text-sm ${
+                      m.highlight ? category.color.accent : "opacity-75"
+                    }`}
+                  >
+                    {m.value}만
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-6 text-xs opacity-50">
+            * 2025년 행정안전부 주민등록 인구 통계 기준. 통합특별시 수치는
+            광주 + 전남 합계 추정치.
           </div>
         </div>
 

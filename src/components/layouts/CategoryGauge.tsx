@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
+import ImageSlot from "@/components/ImageSlot";
 
 type Props = { category: Category };
 
@@ -18,6 +19,15 @@ export default function CategoryGauge({ category }: Props) {
       className={`relative overflow-hidden ${category.color.bg} ${category.color.text}`}
     >
       <div className="mx-auto max-w-7xl px-6 py-32 md:px-12 md:py-40">
+        {/* Header image slot */}
+        <div className={`mb-16 ${category.color.accent}`}>
+          <ImageSlot
+            label="HERO IMAGE · 05 국민 안전"
+            caption="국가정보자원관리원 복구 현장 · 소방 이미지 예정"
+            accent={category.color.accent}
+          />
+        </div>
+
         <div className="grid gap-16 md:grid-cols-2 md:items-center md:gap-20">
           {/* Left: Circular gauge */}
           <div className="relative flex items-center justify-center">

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { heroStats } from "@/data/achievements";
+import CountUp from "./CountUp";
+import ImageSlot from "./ImageSlot";
 
 export default function Hero() {
   return (
@@ -57,6 +59,16 @@ export default function Hero() {
             />
           );
         })}
+      </div>
+
+      {/* Portrait placeholder (desktop only) */}
+      <div className="pointer-events-none absolute right-12 top-1/2 z-[5] hidden w-[280px] -translate-y-1/2 text-amber-300/90 lg:block xl:right-20 xl:w-[320px]">
+        <ImageSlot
+          variant="portrait"
+          label="MINISTER PORTRAIT"
+          caption="장관 공식 포트레이트 · 흑백 예정"
+          accent="text-amber-300"
+        />
       </div>
 
       {/* Diagonal accent line */}
@@ -133,9 +145,10 @@ export default function Hero() {
         >
           {heroStats.map((s) => (
             <div key={s.label}>
-              <div className="text-display text-5xl text-amber-300 md:text-6xl">
-                {s.value}
-              </div>
+              <CountUp
+                value={s.value}
+                className="text-display text-5xl text-amber-300 md:text-6xl"
+              />
               <div className="mt-2 text-sm text-white/60 md:text-base">
                 {s.label}
               </div>

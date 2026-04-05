@@ -2,6 +2,18 @@
 
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
+import ImageSlot from "./ImageSlot";
+
+const categoryImageHints: Record<string, { label: string; caption: string }> = {
+  "democracy-restoration": {
+    label: "HERO IMAGE · 06 민주주의의 회복",
+    caption: "촛불 · 5·18 민주묘지 · 진실화해위 출범 이미지 예정",
+  },
+  "new-ministry": {
+    label: "HERO IMAGE · 07 새로운 행안부",
+    caption: "대국민 업무보고 · MZ 직원 소통 · 부처 회의 이미지 예정",
+  },
+};
 
 type Props = {
   category: Category;
@@ -17,6 +29,17 @@ export default function CategorySection({ category, index }: Props) {
       className={`relative overflow-hidden ${category.color.bg} ${category.color.text}`}
     >
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-12 md:py-32">
+        {/* Header image slot */}
+        {categoryImageHints[category.id] && (
+          <div className={`mb-16 ${category.color.accent}`}>
+            <ImageSlot
+              label={categoryImageHints[category.id].label}
+              caption={categoryImageHints[category.id].caption}
+              accent={category.color.accent}
+            />
+          </div>
+        )}
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
+import CountUp from "@/components/CountUp";
+import ImageSlot from "@/components/ImageSlot";
 
 type Props = { category: Category };
 
@@ -29,6 +31,15 @@ export default function CategoryBigNumber({ category }: Props) {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-32 md:px-12 md:py-48">
+        {/* Header image slot */}
+        <div className={`mb-16 ${category.color.accent}`}>
+          <ImageSlot
+            label="HERO IMAGE · 02 민생회복"
+            caption="전통시장 · 상품권 지급 현장 이미지 예정"
+            accent={category.color.accent}
+          />
+        </div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,11 +71,10 @@ export default function CategoryBigNumber({ category }: Props) {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
             >
-              <div
+              <CountUp
+                value={s.value}
                 className={`text-display text-[clamp(2.75rem,6vw,5rem)] leading-none ${category.color.accent}`}
-              >
-                {s.value}
-              </div>
+              />
               <div className="mt-4 text-sm opacity-70 md:text-base">
                 {s.label}
               </div>
