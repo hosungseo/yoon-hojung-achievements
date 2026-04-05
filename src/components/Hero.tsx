@@ -9,6 +9,19 @@ export default function Hero() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a1020] via-[#0f1b3d] to-[#1a0f2e]" />
 
+      {/* Radial glow */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2.5, ease: "easeOut" }}
+        className="absolute left-1/2 top-1/3 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle at center, rgba(251,191,36,0.18) 0%, rgba(251,191,36,0.05) 35%, transparent 70%)",
+          filter: "blur(40px)",
+        }}
+      />
+
       {/* Decorative grid */}
       <div
         className="absolute inset-0 opacity-[0.08]"
@@ -17,6 +30,41 @@ export default function Hero() {
             "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
         }}
+      />
+
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(16)].map((_, i) => {
+          const left = (i * 137) % 100;
+          const top = (i * 79) % 100;
+          const duration = 8 + (i % 5) * 2;
+          const delay = (i * 0.4) % 4;
+          return (
+            <motion.div
+              key={i}
+              className="absolute h-1 w-1 rounded-full bg-amber-300/60"
+              style={{ left: `${left}%`, top: `${top}%` }}
+              animate={{
+                y: [-20, 20, -20],
+                opacity: [0.2, 0.8, 0.2],
+              }}
+              transition={{
+                duration,
+                delay,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          );
+        })}
+      </div>
+
+      {/* Diagonal accent line */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute left-0 top-[35%] h-px w-full origin-left bg-gradient-to-r from-transparent via-amber-300/40 to-transparent"
       />
 
       {/* Content */}

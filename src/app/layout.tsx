@@ -2,15 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "윤호중 행정안전부 장관 | 주요 성과",
+  metadataBase: new URL("https://hosungseo.github.io/yoon-hojung-achievements"),
+  title: "77년 만의 변화 · 윤호중 행정안전부 장관의 기록",
   description:
-    "국민주권 정부의 성과를 제도로 뒷받침한 윤호중 행정안전부 장관의 주요 성과 공식 기록",
+    "검찰청 77년 폐지 · 전남광주통합특별시 · 9조원 민생회복 · AI 민주정부. 국민 삶에 플러스, 행복안전부 — 제도로 남긴 약속을 기록합니다.",
   openGraph: {
-    title: "윤호중 행정안전부 장관 | 주요 성과",
+    title: "77년 만의 변화 · 윤호중의 기록",
     description:
-      "정부혁신 · 지방분권 · AI 디지털정부 · 재난안전 · 민생치안까지",
+      "검찰청 폐지 · 1호 통합특별시 · 9조원 민생회복 · AI 국민비서 15초",
     locale: "ko_KR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "77년 만의 변화 · 윤호중의 기록",
+    description:
+      "검찰청 폐지 · 1호 통합특별시 · 9조원 민생회복 · AI 국민비서 15초",
   },
 };
 
