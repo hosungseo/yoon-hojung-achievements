@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 
 // Tag label → category slug (matches src/data/achievements.ts ids).
 const tagToSlug: Record<string, string> = {
@@ -277,7 +278,17 @@ const chronology: MonthGroup[] = [
   },
 ];
 
+type YearFilter = "all" | "2025" | "2026";
+
 export default function Timeline() {
+  const [filter, setFilter] = useState<YearFilter>("all");
+
+  const filtered =
+    filter === "all"
+      ? chronology
+      : chronology.filter((g) => g.yearMonth.startsWith(filter));
+  const totalEvents = filtered.reduce((n, g) => n + g.events.length, 0);
+
   return (
     <section
       id="timeline"
@@ -289,7 +300,7 @@ export default function Timeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-16 md:mb-24"
+          className="mb-10 md:mb-14"
         >
           <div className="mb-6 text-xs font-bold tracking-[0.3em] text-amber-300">
             CHRONOLOGY
@@ -303,8 +314,36 @@ export default function Timeline() {
           </p>
         </motion.div>
 
+        {/* Year filter */}
+        <div className="mb-12 flex flex-wrap items-center gap-2 md:mb-16">
+          {(
+            [
+              { key: "all", label: "전체" },
+              { key: "2025", label: "2025" },
+              { key: "2026", label: "2026" },
+            ] as { key: YearFilter; label: string }[]
+          ).map((opt) => (
+            <button
+              key={opt.key}
+              type="button"
+              onClick={() => setFilter(opt.key)}
+              aria-pressed={filter === opt.key}
+              className={`border px-4 py-2 text-xs font-bold tracking-widest transition ${
+                filter === opt.key
+                  ? "border-amber-300 bg-amber-300 text-black"
+                  : "border-white/20 text-white/60 hover:border-white/50 hover:text-white"
+              }`}
+            >
+              {opt.label}
+            </button>
+          ))}
+          <div className="ml-auto text-[10px] tracking-widest text-white/40 md:text-xs">
+            {totalEvents} events
+          </div>
+        </div>
+
         <div className="space-y-16 md:space-y-20">
-          {chronology.map((group) => (
+          {filtered.map((group) => (
             <motion.section
               key={group.yearMonth}
               initial={{ opacity: 0, y: 30 }}

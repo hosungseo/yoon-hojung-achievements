@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ScrollNav from "@/components/ScrollNav";
+import SearchOverlay from "@/components/SearchOverlay";
 import CategorySection from "@/components/CategorySection";
 import CategoryTimeline from "@/components/layouts/CategoryTimeline";
 import CategoryBigNumber from "@/components/layouts/CategoryBigNumber";
@@ -36,6 +37,7 @@ export default function HomePage() {
   return (
     <main className="relative">
       <ScrollNav />
+      <SearchOverlay />
       <Hero />
 
       {/* 01 정부혁신 → 02 민생회복 사이 Impact */}
