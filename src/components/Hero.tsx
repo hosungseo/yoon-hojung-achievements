@@ -125,9 +125,9 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.35 }}
             className="text-display text-[clamp(2.75rem,9vw,7.5rem)] text-balance"
           >
-            약속은,
+            보통의 하루를,
             <br />
-            <span className="text-amber-300">제도</span>로 남았습니다.
+            <span className="text-amber-300">특별하게</span> 지키는 일.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
