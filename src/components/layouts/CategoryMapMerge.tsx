@@ -321,12 +321,11 @@ export default function CategoryMapMerge({ category }: Props) {
                       style={{
                         width: `${pct}%`,
                         transformOrigin: "left center",
+                        backgroundColor: m.highlight
+                          ? "#6ee7b7"
+                          : "rgba(255,255,255,0.25)",
                       }}
-                      className={`absolute inset-y-0 left-0 ${
-                        m.highlight
-                          ? category.color.accent.replace("text-", "bg-")
-                          : "bg-white/25"
-                      }`}
+                      className="absolute inset-y-0 left-0"
                     />
                   </div>
                   <div
