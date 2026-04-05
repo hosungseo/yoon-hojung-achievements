@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* Safelist: dynamically-built accent classes via `.replace("text-", ...)`
+   in component code. Without these, Tailwind's static scanner cannot
+   detect them and they get stripped from the final CSS. */
+@source inline("bg-amber-300");
+@source inline("bg-orange-300");
+@source inline("bg-emerald-300");
+@source inline("bg-cyan-300");
+@source inline("bg-red-300");
+@source inline("bg-violet-300");
+@source inline("bg-indigo-300");
+@source inline("border-amber-300");
+@source inline("border-orange-300");
+@source inline("border-emerald-300");
+@source inline("border-cyan-300");
+@source inline("border-red-300");
+@source inline("border-violet-300");
+@source inline("border-indigo-300");
+
 @font-face {
   font-family: "Pretendard";
   font-weight: 45 920;
