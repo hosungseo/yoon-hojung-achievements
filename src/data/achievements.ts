@@ -125,6 +125,23 @@ export const categories: Category[] = [
         lead: "국가의 상훈을 바로세우다",
         description:
           "비상계엄 당시 훈포장을 거부했던 의인들에게 훈포장을 다시 수여하고, 과거 부적절하게 수여된 서훈을 취소하는 작업을 진행했습니다. 국가가 누구를 기억하고 누구에게 명예를 부여할 것인지에 대한 기준을 다시 세웠습니다.",
+        sources: [
+          {
+            label: "12·12군사반란 주요임무 종사자 무공훈장 취소 추진",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156750611",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "12·12 군사반란 주요임무 종사자 10명 무공훈장 취소",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148961350",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "\"윤석열이 준 훈장, 줘도 안 받아\"…공직자 781명, 새 정부서 재수훈",
+            url: "https://www.khan.co.kr/article/202603042054005/",
+            publisher: "경향신문",
+          },
+        ],
       },
     ],
   },
@@ -187,6 +204,18 @@ export const categories: Category[] = [
         lead: "지방 재정 자립의 토대",
         description:
           "지방 재정의 구조적 문제를 해결하기 위해 지방세제 전반의 전면 개편을 추진하고 있습니다. 지방이 스스로 재원을 확보할 수 있는 토대를 제도로 만들고 있습니다.",
+        sources: [
+          {
+            label: "2026년 새해부터 달라지는 지방세제",
+            url: "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=122851",
+            publisher: "행정안전부",
+          },
+          {
+            label: "2025년 지방세제 개편안 발표",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156705069",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
       {
         id: "saemaul-finance",
@@ -194,6 +223,18 @@ export const categories: Category[] = [
         lead: "서민 금융의 안정",
         description:
           "서민 경제의 중요한 축인 새마을금고의 건전성을 선제적으로 관리해 금융 안정성을 확보했습니다.",
+        sources: [
+          {
+            label: "새마을금고 건전성 관리 강화를 위해 '26년 정부합동검사 대폭 확대 실시",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156743619",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "과학수사 발전 격려하고 서민금융 현장 살펴",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156750838",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
     ],
   },
@@ -251,6 +292,13 @@ export const categories: Category[] = [
         lead: "재정의 무게중심을 지방으로",
         description:
           "지방이 스스로 미래를 설계할 수 있도록 국가-지방 재정분권 논의를 직접 주도하고 있습니다. 권한 이양과 재원 이양을 함께 추진해 명목이 아닌 실질적인 지방분권을 구현합니다.",
+        sources: [
+          {
+            label: "윤호중 행안장관 \"행정통합, 과거와 달리 '선통합·후합의' 방식\"",
+            url: "https://www.khan.co.kr/article/202602051608001",
+            publisher: "경향신문",
+          },
+        ],
       },
       {
         id: "local-council-upgrade",
@@ -272,6 +320,18 @@ export const categories: Category[] = [
         lead: "소멸을 자립으로",
         description:
           "기존의 단편적 지원 방식을 넘어 지방소멸대응기금의 운용 패러다임을 전면 개편했습니다. 지역이 스스로 일어설 수 있는 자립형 지원 구조로 전환하고 있습니다.",
+        sources: [
+          {
+            label: "2026년 지방소멸대응기금 1조, 시설이 아닌 '사람 중심'으로 쓰입니다",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156732898",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "'지방소멸대응기금' 잘 쓴 지역에 추가 인센티브…성과 중심 개편",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148940713",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
       {
         id: "differential-local-index",
@@ -286,6 +346,18 @@ export const categories: Category[] = [
         lead: "재생에너지로 지역소득을 만들다",
         description:
           "햇빛소득마을 추진단을 출범시키고 전국 확산을 본격화했습니다. 재생에너지 발전 수익을 지역 주민의 실질 소득으로 환원하는 새로운 지역경제 모델입니다.",
+        sources: [
+          {
+            label: "햇빛으로 마을을 살린다, '햇빛소득마을 추진단' 출범",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156744493",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "주민과 함께 만드는 풍요로운 마을, '햇빛소득마을' 전국 확산 본격 추진",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156750566",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
     ],
   },
@@ -371,6 +443,18 @@ export const categories: Category[] = [
         lead: "읽는 문서에서 쓰이는 문서로",
         description:
           "AI가 읽고 쓰고 요약할 수 있는 구조화된 공공문서 표준을 마련해, 정부 내부의 모든 문서가 데이터로 흐를 수 있도록 혁신하고 있습니다.",
+        sources: [
+          {
+            label: "보고서 꾸미는 시간에 민생 현장으로, 행정안전부 'AI친화 행정문서 혁신' 시범 실시",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156750558",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "169명의 행정안전부 'AI 리더', AI 민주정부 구현 이끈다",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156750414",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
     ],
   },
@@ -438,6 +522,18 @@ export const categories: Category[] = [
         lead: "장관의 첫 공식 일정은 재난 현장이었습니다",
         description:
           "2025년 7월 19일 취임 첫 공식 일정으로 집중호우 대처 중앙재난안전대책본부 회의를 직접 주재했습니다. 장관의 첫 발걸음이 재난 현장에 맞춰진다는 메시지를 제도적으로 각인시켰습니다.",
+        sources: [
+          {
+            label: "윤호중 신임 행정안전부 장관, 임명 즉시 집중호우 상황 살펴",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156699067",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "윤호중 행안장관, 호우 대처 중대본 회의 주재…취임 후 첫 공식 행보",
+            url: "https://biz.heraldcorp.com/article/10535379",
+            publisher: "헤럴드경제",
+          },
+        ],
       },
       {
         id: "voice-phishing-unit",
@@ -478,6 +574,18 @@ export const categories: Category[] = [
         lead: "가장 약한 이를 가장 강하게",
         description:
           "어린이 약취·유인 범죄에 대한 종합 대책을 수립했습니다. 국회 어린이 안전포럼 대표 경험을 가진 장관의 이력이 정책에 직결된 사례입니다.",
+        sources: [
+          {
+            label: "[포토] 윤호중 장관 \"어린이 약취·유인 범죄에 무관용 원칙\"",
+            url: "https://www.asiatoday.co.kr/kn/view.php?key=20251111010005432",
+            publisher: "아시아투데이",
+          },
+          {
+            label: "'납치범에 철퇴'…교육부·행안부·경찰 등 어린이 등하굣길 안전 대책 발표",
+            url: "https://www.sedaily.com/NewsView/2H0EWD14QP",
+            publisher: "서울경제",
+          },
+        ],
       },
       {
         id: "disaster-workers",
@@ -485,6 +593,18 @@ export const categories: Category[] = [
         lead: "현장 최전선을 든든하게",
         description:
           "재난 현장에서 국민 생명을 지키는 종사자들의 처우와 근무 여건을 실질적으로 개선했습니다. 국민 안전을 지키는 이들을 먼저 지키는 것이 원칙입니다.",
+        sources: [
+          {
+            label: "중앙부처·지자체 재난안전 역량 강화한다…인력 확충·보상 확대",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148949467",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "재난안전·민원 현장 지방공무원 승진 빨라진다…인사 우대 강화",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148961778",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
     ],
   },
@@ -512,6 +632,18 @@ export const categories: Category[] = [
         lead: "시민의 용기를 국가가 기록하다",
         description:
           "2024년 12·3 비상계엄을 막아낸 '빛의 혁명' 기여자에 대한 인증과 유공 포상을 추진했습니다. 국가가 민주주의를 지킨 시민의 이름을 공식 기록으로 남기는 일을 직접 시작했습니다.",
+        sources: [
+          {
+            label: "당신의 용기가 민주주의를 구했습니다. '빛의 위원회' 설치해 시민 정신 기린다",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156748140",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "\"12·3 비상계엄 항거 시민 예우\"…대통령 직속 '빛의 위원회' 설치",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148960604",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
       {
         id: "truth-reconciliation-3",
@@ -519,6 +651,13 @@ export const categories: Category[] = [
         lead: "과거를 마주해야 미래가 열립니다",
         description:
           "책임있고 미래지향적인 자세로 과거사 문제를 풀어나가기 위해 제3기 진실·화해를위한과거사정리위원회를 출범시켰습니다. 국가의 책임을 기억하고 피해자의 목소리에 귀 기울이는 제도적 플랫폼입니다.",
+        sources: [
+          {
+            label: "3기 진실화해위원회 출범, 진실규명 접수 개시",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156745909",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
       {
         id: "jeju-gwangju",
@@ -540,6 +679,18 @@ export const categories: Category[] = [
         lead: "공공의 광장을 지키다",
         description:
           "혐오현수막 조치를 확행하고 정당현수막 특례 폐지를 추진했습니다. '혐오집회 법집행 대책'을 국가경찰위원회 안건으로 부의해 공공의 광장이 혐오와 폭력에 의해 훼손되지 않도록 했습니다.",
+        sources: [
+          {
+            label: "\"혐오·비방 현수막 근절\"…18일부터 '금지광고물' 가이드라인 시행",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148954976",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "李, 혐오 유발 현수막 단속 지시…정당현수막 특례 폐지 추진",
+            url: "https://www.edaily.co.kr/News/Read?newsId=04529686642399504&mediaCodeNo=257",
+            publisher: "이데일리",
+          },
+        ],
       },
       {
         id: "social-economy-law",
@@ -572,6 +723,18 @@ export const categories: Category[] = [
         lead: "국가의 명예를 바로세우다",
         description:
           "과거 훈포장을 거부했던 의인들에게 훈포장을 다시 수여하는 절차를 추진하고, 부적절하게 서훈된 인물의 서훈을 취소했습니다. 국가가 누구를 명예롭게 기억할 것인지의 기준을 다시 세웠습니다.",
+        sources: [
+          {
+            label: "\"12·3 비상계엄 항거 시민 예우\"…대통령 직속 '빛의 위원회' 설치",
+            url: "https://www.korea.kr/news/policyNewsView.do?newsId=148960604",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "12·12군사반란 주요임무 종사자 무공훈장 취소 추진",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156750611",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
     ],
   },
@@ -599,6 +762,23 @@ export const categories: Category[] = [
         lead: "이름은 행정안전부, 역할은 행복안전부",
         description:
           "부처의 존재 이유를 '국민 삶에 플러스'를 더하는 것으로 재정의했습니다. 안전만 지키는 정부가 아니라 행복을 더하는 정부로의 전환을 비전으로 선언했습니다.",
+        sources: [
+          {
+            label: "윤호중 행정안전부 장관 2026년 행정안전부 주요업무 추진계획 발표",
+            url: "https://www.korea.kr/news/policyFocusView.do?newsId=148956771&pkgId=49500829",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "국민 삶에 플러스+ 든든한 행복안전부",
+            url: "https://www.korea.kr/multi/visualNewsView.do?newsId=148956773",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "행정안전부 업무보고 사후브리핑",
+            url: "https://www.korea.kr/briefing/policyBriefingView.do?newsId=156735590",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
       {
         id: "first-female-bureau-chief",
@@ -634,6 +814,18 @@ export const categories: Category[] = [
         lead: "실무자가 주인공인 토론",
         description:
           "국별로 「정책플러스 토론회」를 개최해 실무 공무원이 직접 정책 현안을 발표하고 토론하는 자리를 제도화했습니다. 위계가 아닌 전문성이 판단 기준이 되는 부처 문화로의 전환입니다.",
+        sources: [
+          {
+            label: "윤호중 장관, 실무자들과 머리 맞대고 행정안전부 「정책플러스 토론회」 개최",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156740317",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "업무보고 이어 '정책+ 토론회' 개최…윤호중 장관, 실무자 소통 나선다",
+            url: "https://www.ajunews.com/view/20260119153402176",
+            publisher: "아주경제",
+          },
+        ],
       },
       {
         id: "senior-day-abolition",
@@ -641,6 +833,23 @@ export const categories: Category[] = [
         lead: "낡은 의전을 걷어내다",
         description:
           "관행적으로 이어지던 '간부 모시는 날'을 근절하고, 전부처 최초 '헌법존중 TF'를 가동해 조직문화 개선의 기준을 헌법 가치에 맞춰 다시 정립했습니다.",
+        sources: [
+          {
+            label: "헌법존중 정부혁신 총괄 TF 발족",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156730409",
+            publisher: "대한민국 정책브리핑",
+          },
+          {
+            label: "공직사회 '간부 모시는 날' 3차 실태조사…\"불합리한 관행, 반드시 근절\"",
+            url: "https://biz.heraldcorp.com/article/10674610",
+            publisher: "헤럴드경제",
+          },
+          {
+            label: "윤호중 장관 '간부 모시는 날' 폐지 지시…공직사회 혁신 특명",
+            url: "https://www.hankyung.com/article/202510161987i",
+            publisher: "한국경제",
+          },
+        ],
       },
       {
         id: "anti-gapjil",
@@ -655,6 +864,13 @@ export const categories: Category[] = [
         lead: "인사 개선의 출발은 현장의 목소리",
         description:
           "공무원 노조와의 정례 면담에서 인사 개선 사항을 직접 청취하고, 직원 첫 만남·추석 메시지·격려 간식 배부 등 일상적 소통을 꾸준히 이어가고 있습니다.",
+        sources: [
+          {
+            label: "'행정안전부-공무원노조 정책협의체' 2025년 첫 회의 개최",
+            url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156686526",
+            publisher: "대한민국 정책브리핑",
+          },
+        ],
       },
     ],
   },
