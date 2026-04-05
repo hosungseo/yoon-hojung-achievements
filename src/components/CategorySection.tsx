@@ -7,13 +7,14 @@ import { asset } from "@/lib/asset";
 
 const categoryImageHints: Record<
   string,
-  { label: string; caption: string; src: string; alt: string }
+  { label: string; caption: string; src: string; alt: string; aspect?: string }
 > = {
   "democracy-restoration": {
     label: "06 · DEMOCRACY RESTORED",
     caption: "사회연대경제 정책 현장 방문",
     src: asset("/photos/06-democracy.jpg"),
     alt: "윤호중 장관 사회연대경제 정책 현장 방문",
+    aspect: "aspect-[8/5]",
   },
   "new-ministry": {
     label: "07 · NEW MINISTRY",
@@ -46,6 +47,7 @@ export default function CategorySection({ category, index }: Props) {
               accent={category.color.accent}
               src={categoryImageHints[category.id].src}
               alt={categoryImageHints[category.id].alt}
+              aspect={categoryImageHints[category.id].aspect}
               credit="출처 : 행정안전부 · 정책브리핑"
             />
           </div>

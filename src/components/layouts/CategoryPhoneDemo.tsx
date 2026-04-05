@@ -54,45 +54,55 @@ export default function CategoryPhoneDemo({ category }: Props) {
               {category.intro}
             </p>
 
-            <div className="mt-10 flex items-center gap-6">
-              {/* Timer ring */}
-              <div className="relative h-28 w-28 shrink-0 md:h-36 md:w-36">
+            <motion.div
+              className="mt-10"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+            >
+              <div
+                className={`relative mx-0 h-48 w-48 md:h-64 md:w-64 ${category.color.accent}`}
+              >
                 <svg viewBox="-60 -60 120 120" className="h-full w-full">
+                  {/* Background ring */}
                   <circle
                     cx="0"
                     cy="0"
                     r="52"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
-                    opacity="0.15"
+                    strokeWidth="4"
+                    opacity="0.18"
                   />
+                  {/* Progress ring */}
                   <motion.circle
                     cx="0"
                     cy="0"
                     r="52"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="3"
+                    strokeWidth="6"
                     strokeLinecap="round"
                     strokeDasharray={2 * Math.PI * 52}
-                    initial={{ strokeDashoffset: 2 * Math.PI * 52 }}
-                    whileInView={{ strokeDashoffset: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{
-                      duration: 1.6,
-                      ease: [0.16, 1, 0.3, 1],
+                    variants={{
+                      hidden: { strokeDashoffset: 2 * Math.PI * 52 },
+                      visible: {
+                        strokeDashoffset: 0,
+                        transition: {
+                          duration: 1.8,
+                          ease: [0.16, 1, 0.3, 1],
+                        },
+                      },
                     }}
                     transform="rotate(-90)"
-                    className={category.color.accent}
                   />
-                  {/* Tick marks */}
+                  {/* Hour tick marks */}
                   {[...Array(12)].map((_, i) => {
                     const angle = (i / 12) * Math.PI * 2 - Math.PI / 2;
                     const x1 = Math.cos(angle) * 44;
                     const y1 = Math.sin(angle) * 44;
-                    const x2 = Math.cos(angle) * 48;
-                    const y2 = Math.sin(angle) * 48;
+                    const x2 = Math.cos(angle) * 49;
+                    const y2 = Math.sin(angle) * 49;
                     return (
                       <line
                         key={i}
@@ -101,21 +111,25 @@ export default function CategoryPhoneDemo({ category }: Props) {
                         x2={x2}
                         y2={y2}
                         stroke="currentColor"
-                        strokeWidth="1.5"
-                        opacity="0.3"
+                        strokeWidth="2"
+                        opacity="0.5"
                       />
                     );
                   })}
                 </svg>
+                {/* Number overlay inside the ring */}
+                <div className="pointer-events-none absolute inset-0 flex items-baseline justify-center">
+                  <div className="flex items-baseline gap-1">
+                    <CountUp
+                      value="15"
+                      duration={1.8}
+                      className={`text-display text-[clamp(3.5rem,12vw,6rem)] leading-none ${category.color.accent}`}
+                    />
+                    <div className="text-xl font-bold md:text-2xl">초</div>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-baseline gap-2">
-                <CountUp
-                  value="15"
-                  className={`text-display text-[clamp(4rem,10vw,9rem)] leading-none ${category.color.accent}`}
-                />
-                <div className="text-2xl font-bold">초</div>
-              </div>
-            </div>
+            </motion.div>
             <div className="mt-2 text-sm opacity-60">
               AI 국민비서 · 주민등록등본 발급 소요시간
             </div>

@@ -88,13 +88,17 @@ export default function CategoryMapMerge({ category }: Props) {
           </motion.div>
 
           {/* Right: Abstract merge visualization */}
-          <div className="relative aspect-square w-full max-w-lg mx-auto">
+          <motion.div
+            className={`relative aspect-square w-full max-w-lg mx-auto ${category.color.accent}`}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+          >
             <svg
               viewBox="0 0 400 400"
               className="h-full w-full"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Background grid */}
               <defs>
                 <pattern
                   id="grid"
@@ -114,16 +118,36 @@ export default function CategoryMapMerge({ category }: Props) {
                   <stop offset="0%" stopColor="currentColor" stopOpacity="0.9" />
                   <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
                 </radialGradient>
+                <marker
+                  id="arrow"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="5"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path
+                    d="M0,0 L10,5 L0,10 z"
+                    fill="currentColor"
+                  />
+                </marker>
               </defs>
               <rect width="400" height="400" fill="url(#grid)" />
 
               {/* 광주 blob */}
               <motion.g
-                initial={{ x: -80, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className={category.color.accent}
+                variants={{
+                  hidden: { x: -80, opacity: 0 },
+                  visible: {
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 1.4,
+                      delay: 0.3,
+                      ease: [0.16, 1, 0.3, 1],
+                    },
+                  },
+                }}
               >
                 <circle cx="180" cy="180" r="55" fill="url(#blobGrad)" />
                 <text
@@ -150,11 +174,18 @@ export default function CategoryMapMerge({ category }: Props) {
 
               {/* 전남 blob */}
               <motion.g
-                initial={{ x: 80, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className={category.color.accent}
+                variants={{
+                  hidden: { x: 80, opacity: 0 },
+                  visible: {
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 1.4,
+                      delay: 0.5,
+                      ease: [0.16, 1, 0.3, 1],
+                    },
+                  },
+                }}
               >
                 <circle cx="250" cy="220" r="75" fill="url(#blobGrad)" />
                 <text
@@ -179,7 +210,7 @@ export default function CategoryMapMerge({ category }: Props) {
                 </text>
               </motion.g>
 
-              {/* Merge line animation */}
+              {/* Merge line */}
               <motion.line
                 x1="180"
                 y1="180"
@@ -188,25 +219,47 @@ export default function CategoryMapMerge({ category }: Props) {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeDasharray="4 4"
-                initial={{ pathLength: 0, opacity: 0 }}
-                whileInView={{ pathLength: 1, opacity: 0.7 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 1.3 }}
-                className={category.color.accent}
+                variants={{
+                  hidden: { pathLength: 0, opacity: 0 },
+                  visible: {
+                    pathLength: 1,
+                    opacity: 0.7,
+                    transition: { duration: 1, delay: 1.3 },
+                  },
+                }}
+              />
+
+              {/* Arrow indicator */}
+              <motion.path
+                d="M 200 280 L 200 310"
+                stroke="currentColor"
+                strokeWidth="2"
+                markerEnd="url(#arrow)"
+                fill="none"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: { delay: 1.6, duration: 0.6 },
+                  },
+                }}
               />
 
               {/* Final unified label */}
               <motion.g
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 1.8 }}
-                className={category.color.accent}
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.8, delay: 1.8 },
+                  },
+                }}
               >
                 <rect
-                  x="125"
+                  x="115"
                   y="315"
-                  width="150"
+                  width="170"
                   height="36"
                   rx="2"
                   fill="currentColor"
@@ -223,38 +276,8 @@ export default function CategoryMapMerge({ category }: Props) {
                   전남광주통합특별시
                 </text>
               </motion.g>
-
-              {/* Arrow indicator */}
-              <motion.path
-                d="M 200 280 L 200 310"
-                stroke="currentColor"
-                strokeWidth="2"
-                markerEnd="url(#arrow)"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.6 }}
-                className={category.color.accent}
-                fill="none"
-              />
-              <defs>
-                <marker
-                  id="arrow"
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="5"
-                  refY="5"
-                  orient="auto"
-                >
-                  <path
-                    d="M0,0 L10,5 L0,10 z"
-                    fill="currentColor"
-                    className={category.color.accent}
-                  />
-                </marker>
-              </defs>
             </svg>
-          </div>
+          </motion.div>
         </div>
 
         {/* Metro population comparison bar chart */}
@@ -285,13 +308,17 @@ export default function CategoryMapMerge({ category }: Props) {
                   </div>
                   <div className="relative h-5 overflow-hidden bg-white/5">
                     <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${pct}%` }}
-                      viewport={{ once: true, margin: "-80px" }}
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true, margin: "-40px" }}
                       transition={{
-                        duration: 1.3,
-                        delay: 0.1 + i * 0.08,
+                        duration: 1.2,
+                        delay: 0.1 + i * 0.06,
                         ease: [0.16, 1, 0.3, 1],
+                      }}
+                      style={{
+                        width: `${pct}%`,
+                        transformOrigin: "left center",
                       }}
                       className={`absolute inset-y-0 left-0 ${
                         m.highlight
