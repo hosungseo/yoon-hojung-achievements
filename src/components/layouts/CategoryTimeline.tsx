@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import PhotoPair from "@/components/PhotoPair";
 import SourceLinks from "@/components/SourceLinks";
 import { asset } from "@/lib/asset";
 
@@ -119,16 +120,23 @@ export default function CategoryTimeline({ category }: Props) {
           </ol>
         </div>
 
-        {/* Secondary supporting photo */}
+        {/* Supporting photo pair */}
         <div className={`mb-16 ${category.color.accent}`}>
-          <ImageSlot
-            label="FIELD · 01"
-            caption="정부서울청사 상황센터 현장"
+          <PhotoPair
             accent={category.color.accent}
-            src={asset("/photos/01-gov-reform-2.jpg")}
-            alt="윤호중 장관 정부서울청사 현장"
             credit="출처 : 행정안전부 · 정책브리핑"
-            aspect="aspect-[21/9]"
+            photos={[
+              {
+                src: asset("/photos/01-gov-reform-2.jpg"),
+                alt: "윤호중 장관 정부서울청사 주재",
+                caption: "FIELD · 정부서울청사 주재",
+              },
+              {
+                src: asset("/photos/01-gov-reform-3.jpg"),
+                alt: "윤호중 장관 회의 발언",
+                caption: "STATEMENT · 회의 발언",
+              },
+            ]}
           />
         </div>
 

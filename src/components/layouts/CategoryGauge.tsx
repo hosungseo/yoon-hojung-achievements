@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import ImageSlot from "@/components/ImageSlot";
+import PhotoPair from "@/components/PhotoPair";
 import SourceLinks from "@/components/SourceLinks";
 import { asset } from "@/lib/asset";
 
@@ -190,16 +191,23 @@ export default function CategoryGauge({ category }: Props) {
           </motion.div>
         </div>
 
-        {/* Secondary supporting photo */}
+        {/* Supporting photo pair */}
         <div className={`mt-24 ${category.color.accent}`}>
-          <ImageSlot
-            label="FIELD · 05"
-            caption="산불예방 캠페인 현장"
+          <PhotoPair
             accent={category.color.accent}
-            src={asset("/photos/05-public-safety-2.jpg")}
-            alt="산불예방 캠페인 현장"
             credit="출처 : 행정안전부 · 정책브리핑"
-            aspect="aspect-[21/9]"
+            photos={[
+              {
+                src: asset("/photos/05-public-safety-2.jpg"),
+                alt: "산불예방 캠페인 현장",
+                caption: "FIELD · 산불예방 캠페인",
+              },
+              {
+                src: asset("/photos/05-public-safety-3.jpg"),
+                alt: "산불 대응 현장 점검",
+                caption: "RESPONSE · 현장 점검",
+              },
+            ]}
           />
         </div>
 

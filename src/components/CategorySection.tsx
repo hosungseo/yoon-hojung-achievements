@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import ImageSlot from "./ImageSlot";
+import PhotoPair from "./PhotoPair";
 import SourceLinks from "./SourceLinks";
 import { asset } from "@/lib/asset";
+
+type PhotoMeta = { src: string; alt: string; caption: string };
 
 const categoryImageHints: Record<
   string,
@@ -14,12 +17,7 @@ const categoryImageHints: Record<
     src: string;
     alt: string;
     aspect?: string;
-    secondary?: {
-      label: string;
-      caption: string;
-      src: string;
-      alt: string;
-    };
+    pair?: [PhotoMeta, PhotoMeta];
   }
 > = {
   "democracy-restoration": {
@@ -28,24 +26,36 @@ const categoryImageHints: Record<
     src: asset("/photos/06-democracy.jpg"),
     alt: "윤호중 장관 사회연대경제 정책 현장 방문",
     aspect: "aspect-[8/5]",
-    secondary: {
-      label: "FIELD · 06",
-      caption: "광주 사회적경제 현장",
-      src: asset("/photos/06-democracy-2.jpg"),
-      alt: "윤호중 장관 광주 사회적경제 현장",
-    },
+    pair: [
+      {
+        src: asset("/photos/06-democracy-2.jpg"),
+        alt: "윤호중 장관 광주 사회적경제 현장",
+        caption: "FIELD · 광주 사회적경제",
+      },
+      {
+        src: asset("/photos/06-democracy-3.jpg"),
+        alt: "사회연대경제 정책 대화",
+        caption: "DIALOGUE · 사회연대경제 대화",
+      },
+    ],
   },
   "new-ministry": {
     label: "07 · NEW MINISTRY",
     caption: "고향사랑기부 및 마약범죄 근절 현장점검",
     src: asset("/photos/07-new-ministry.jpg"),
     alt: "윤호중 장관 제주 현장점검",
-    secondary: {
-      label: "FIELD · 07",
-      caption: "제주 현장점검",
-      src: asset("/photos/07-new-ministry-2.jpg"),
-      alt: "윤호중 장관 제주 현장점검 2",
-    },
+    pair: [
+      {
+        src: asset("/photos/07-new-ministry-2.jpg"),
+        alt: "윤호중 장관 제주 현장점검",
+        caption: "FIELD · 제주 현장점검",
+      },
+      {
+        src: asset("/photos/07-new-ministry-3.jpg"),
+        alt: "윤호중 장관 현장 브리핑",
+        caption: "STATEMENT · 현장 브리핑",
+      },
+    ],
   },
 };
 
@@ -134,17 +144,13 @@ export default function CategorySection({ category, index }: Props) {
           ))}
         </div>
 
-        {/* Secondary supporting photo */}
-        {categoryImageHints[category.id]?.secondary && (
+        {/* Supporting photo pair */}
+        {categoryImageHints[category.id]?.pair && (
           <div className={`mt-20 ${category.color.accent}`}>
-            <ImageSlot
-              label={categoryImageHints[category.id].secondary!.label}
-              caption={categoryImageHints[category.id].secondary!.caption}
+            <PhotoPair
               accent={category.color.accent}
-              src={categoryImageHints[category.id].secondary!.src}
-              alt={categoryImageHints[category.id].secondary!.alt}
               credit="출처 : 행정안전부 · 정책브리핑"
-              aspect="aspect-[21/9]"
+              photos={categoryImageHints[category.id].pair!}
             />
           </div>
         )}

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import PhotoPair from "@/components/PhotoPair";
 import SourceLinks from "@/components/SourceLinks";
 import { asset } from "@/lib/asset";
 
@@ -345,16 +346,23 @@ export default function CategoryMapMerge({ category }: Props) {
           </div>
         </div>
 
-        {/* Secondary supporting photo */}
+        {/* Supporting photo pair */}
         <div className={`mt-24 ${category.color.accent}`}>
-          <ImageSlot
-            label="FIELD · 03"
-            caption="지방소멸 대응 현장"
+          <PhotoPair
             accent={category.color.accent}
-            src={asset("/photos/03-decentralization-2.jpg")}
-            alt="윤호중 장관 지방소멸 대응 현장"
             credit="출처 : 행정안전부 · 정책브리핑"
-            aspect="aspect-[21/9]"
+            photos={[
+              {
+                src: asset("/photos/03-decentralization-2.jpg"),
+                alt: "윤호중 장관 지방소멸 대응 협약식",
+                caption: "FIELD · 상생협약 체결",
+              },
+              {
+                src: asset("/photos/03-decentralization-3.jpg"),
+                alt: "윤호중 장관 지방정부 협력",
+                caption: "DIALOGUE · 지방정부 협력",
+              },
+            ]}
           />
         </div>
 

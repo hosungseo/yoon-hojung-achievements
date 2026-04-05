@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import PhotoPair from "@/components/PhotoPair";
 import SourceLinks from "@/components/SourceLinks";
 import { asset } from "@/lib/asset";
 
@@ -226,16 +227,23 @@ export default function CategoryPhoneDemo({ category }: Props) {
           </div>
         </div>
 
-        {/* Secondary supporting photo */}
+        {/* Supporting photo pair */}
         <div className={`mt-24 ${category.color.accent}`}>
-          <ImageSlot
-            label="FIELD · 04"
-            caption="AI 딥페이크 탐지 시연 현장"
+          <PhotoPair
             accent={category.color.accent}
-            src={asset("/photos/04-ai-democracy-2.jpg")}
-            alt="AI 딥페이크 탐지 분석모델 시연"
             credit="출처 : 행정안전부 · 정책브리핑"
-            aspect="aspect-[21/9]"
+            photos={[
+              {
+                src: asset("/photos/04-ai-democracy-2.jpg"),
+                alt: "AI 딥페이크 탐지 분석모델 시연회",
+                caption: "FIELD · 딥페이크 탐지 시연",
+              },
+              {
+                src: asset("/photos/04-ai-democracy-3.jpg"),
+                alt: "AI 정부 정책 발언",
+                caption: "STATEMENT · AI 정부 정책",
+              },
+            ]}
           />
         </div>
 
