@@ -1,6 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+// Tag label → category slug (matches src/data/achievements.ts ids).
+const tagToSlug: Record<string, string> = {
+  정부혁신: "gov-reform",
+  민생회복: "livelihood-recovery",
+  지방: "decentralization",
+  AI: "ai-democracy",
+  안전: "public-safety",
+  민주주의: "democracy-restoration",
+  행안부: "new-ministry",
+  취임: "new-ministry",
+};
 
 type Event = {
   day: string; // "MM.DD"
@@ -313,52 +326,79 @@ export default function Timeline() {
 
               {/* Event grid */}
               <ol className="grid gap-3 md:grid-cols-2 md:gap-4">
-                {group.events.map((e, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.5, delay: i * 0.04 }}
-                    className={`relative border-l-2 bg-white/[0.02] p-4 transition hover:bg-white/[0.04] md:p-5 ${
-                      e.highlight
-                        ? `${e.accent?.replace("text-", "border-") ?? "border-amber-300"}`
-                        : "border-white/10"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`text-xs font-bold tracking-widest ${e.accent ?? "text-white/80"}`}
-                      >
-                        {e.day}
-                      </div>
-                      {e.tag && (
+                {group.events.map((e, i) => {
+                  const slug = e.tag ? tagToSlug[e.tag] : undefined;
+                  const cardBody = (
+                    <>
+                      <div className="flex items-center gap-3">
                         <div
-                          className={`border px-2 py-0.5 text-[9px] font-bold tracking-[0.15em] ${
-                            e.accent?.replace("text-", "border-") ?? "border-white/20"
-                          } ${e.accent ?? "text-white/60"}`}
+                          className={`text-xs font-bold tracking-widest ${e.accent ?? "text-white/80"}`}
                         >
-                          {e.tag}
+                          {e.day}
+                        </div>
+                        {e.tag && (
+                          <div
+                            className={`border px-2 py-0.5 text-[9px] font-bold tracking-[0.15em] ${
+                              e.accent?.replace("text-", "border-") ??
+                              "border-white/20"
+                            } ${e.accent ?? "text-white/60"}`}
+                          >
+                            {e.tag}
+                          </div>
+                        )}
+                        {e.highlight && (
+                          <div
+                            className={`ml-auto text-[9px] font-bold tracking-widest ${e.accent ?? "text-amber-300"}`}
+                          >
+                            ★
+                          </div>
+                        )}
+                      </div>
+                      <div className="mt-2 text-base font-bold leading-snug md:text-lg">
+                        {e.title}
+                      </div>
+                      {e.desc && (
+                        <div className="mt-1.5 text-xs leading-relaxed opacity-60 md:text-sm">
+                          {e.desc}
                         </div>
                       )}
-                      {e.highlight && (
+                      {slug && (
                         <div
-                          className={`ml-auto text-[9px] font-bold tracking-widest ${e.accent ?? "text-amber-300"}`}
+                          className={`mt-3 flex items-center gap-1 text-[10px] font-bold tracking-widest opacity-0 transition group-hover:opacity-100 ${e.accent ?? "text-white/60"}`}
                         >
-                          ★
+                          상세 보기 <span aria-hidden>→</span>
                         </div>
                       )}
-                    </div>
-                    <div className="mt-2 text-base font-bold leading-snug md:text-lg">
-                      {e.title}
-                    </div>
-                    {e.desc && (
-                      <div className="mt-1.5 text-xs leading-relaxed opacity-60 md:text-sm">
-                        {e.desc}
-                      </div>
-                    )}
-                  </motion.li>
-                ))}
+                    </>
+                  );
+                  const cardClass = `group relative block border-l-2 bg-white/[0.02] p-4 transition hover:bg-white/[0.06] md:p-5 ${
+                    e.highlight
+                      ? `${e.accent?.replace("text-", "border-") ?? "border-amber-300"}`
+                      : "border-white/10"
+                  }`;
+
+                  return (
+                    <motion.li
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-40px" }}
+                      transition={{ duration: 0.5, delay: i * 0.04 }}
+                    >
+                      {slug ? (
+                        <Link
+                          href={`/achievements/${slug}/`}
+                          className={cardClass}
+                          aria-label={`${e.title} · ${e.tag ?? ""} 상세 페이지로 이동`}
+                        >
+                          {cardBody}
+                        </Link>
+                      ) : (
+                        <div className={cardClass}>{cardBody}</div>
+                      )}
+                    </motion.li>
+                  );
+                })}
               </ol>
             </motion.section>
           ))}
