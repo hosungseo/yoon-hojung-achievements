@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import ImageSlot from "@/components/ImageSlot";
+import { asset } from "@/lib/asset";
 
 type Props = { category: Category };
 
@@ -22,9 +23,12 @@ export default function CategoryGauge({ category }: Props) {
         {/* Header image slot */}
         <div className={`mb-16 ${category.color.accent}`}>
           <ImageSlot
-            label="HERO IMAGE · 05 국민 안전"
-            caption="국가정보자원관리원 복구 현장 · 소방 이미지 예정"
+            label="05 · PUBLIC SAFETY"
+            caption="행정안전부·산림청·지방정부 합동 산불예방 캠페인"
             accent={category.color.accent}
+            src={asset("/photos/05-public-safety.jpg")}
+            alt="산불예방 캠페인 현장"
+            credit="출처 : 행정안전부 · 정책브리핑"
           />
         </div>
 

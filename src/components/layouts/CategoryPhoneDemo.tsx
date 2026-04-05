@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import { asset } from "@/lib/asset";
 
 type Props = { category: Category };
 
@@ -24,9 +25,12 @@ export default function CategoryPhoneDemo({ category }: Props) {
         {/* Header image slot */}
         <div className={`mb-16 ${category.color.accent}`}>
           <ImageSlot
-            label="HERO IMAGE · 04 AI 민주정부"
-            caption="판교 개통식 · 키오스크 · 스마트폰 화면 이미지 예정"
+            label="04 · AI DEMOCRATIC GOV"
+            caption="AI 딥페이크 탐지 분석모델 시연회"
             accent={category.color.accent}
+            src={asset("/photos/04-ai-democracy.jpg")}
+            alt="AI 딥페이크 탐지 분석모델 시연회"
+            credit="출처 : 행정안전부 · 정책브리핑"
           />
         </div>
 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import { asset } from "@/lib/asset";
 
 // 2025년 행정안전부 주민등록 인구 기준 (단위: 만 명, 소수점 첫째 자리 반올림)
 const metroPopulation = [
@@ -33,9 +34,12 @@ export default function CategoryMapMerge({ category }: Props) {
         {/* Header image slot */}
         <div className={`mb-16 ${category.color.accent}`}>
           <ImageSlot
-            label="HERO IMAGE · 03 지방의 미래"
-            caption="전남·광주 일출 · 항공뷰 이미지 예정"
+            label="03 · DECENTRALIZATION"
+            caption="행안부-기아 지방소멸 대응 상생협약 체결"
             accent={category.color.accent}
+            src={asset("/photos/03-decentralization.jpg")}
+            alt="행안부-기아 지방소멸 대응 상생협약 체결식"
+            credit="출처 : 행정안전부 · 정책브리핑"
           />
         </div>
 

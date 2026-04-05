@@ -11,8 +11,8 @@ export default function Footer() {
               행정안전부 장관 · 주요 성과
             </div>
             <p className="mt-4 max-w-md text-sm">
-              이 페이지는 윤호중 행정안전부 장관의 주요 성과를 공식 기록으로
-              정리한 대외 홍보 페이지입니다.
+              본 페이지는 공개된 보도자료·정부 발표 자료를 토대로 정리한
+              비공식 아카이브이며, 행정안전부의 공식 홈페이지가 아닙니다.
             </p>
           </div>
 
@@ -46,9 +46,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/10 pt-8 text-xs">
-          © 2026 Ministry of the Interior and Safety, Republic of Korea ·
-          Unofficial Archive
+        <div className="mt-16 border-t border-white/10 pt-8 text-xs leading-relaxed">
+          <p>
+            이미지 출처: 행정안전부 · 대한민국 정책브리핑(korea.kr) — 저작권자의
+            사전 협의를 거쳐 사용하였습니다.
+          </p>
+          <p className="mt-2 text-white/40">
+            © 2026 · Unofficial Archive · Not an official website of the
+            Ministry of the Interior and Safety.
+          </p>
         </div>
       </div>
     </footer>

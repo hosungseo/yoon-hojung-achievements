@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import { asset } from "@/lib/asset";
 
 const historicalEvents = [
   { year: "1948", label: "검찰청 창설", tone: "neutral" },
@@ -25,9 +26,12 @@ export default function CategoryTimeline({ category }: Props) {
         {/* Header image slot */}
         <div className={`mb-16 ${category.color.accent}`}>
           <ImageSlot
-            label="HERO IMAGE · 01 정부혁신"
-            caption="국회의사당 · 공문서 · 서명식 이미지 예정"
+            label="01 · GOVERNMENT REFORM"
+            caption="시장상황점검회의 주재"
             accent={category.color.accent}
+            src={asset("/photos/01-gov-reform.jpg")}
+            alt="윤호중 장관 시장상황점검회의 주재"
+            credit="출처 : 행정안전부 · 정책브리핑"
           />
         </div>
 

@@ -3,15 +3,23 @@
 import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import ImageSlot from "./ImageSlot";
+import { asset } from "@/lib/asset";
 
-const categoryImageHints: Record<string, { label: string; caption: string }> = {
+const categoryImageHints: Record<
+  string,
+  { label: string; caption: string; src: string; alt: string }
+> = {
   "democracy-restoration": {
-    label: "HERO IMAGE · 06 민주주의의 회복",
-    caption: "촛불 · 5·18 민주묘지 · 진실화해위 출범 이미지 예정",
+    label: "06 · DEMOCRACY RESTORED",
+    caption: "사회연대경제 정책 현장 방문",
+    src: asset("/photos/06-democracy.jpg"),
+    alt: "윤호중 장관 사회연대경제 정책 현장 방문",
   },
   "new-ministry": {
-    label: "HERO IMAGE · 07 새로운 행안부",
-    caption: "대국민 업무보고 · MZ 직원 소통 · 부처 회의 이미지 예정",
+    label: "07 · NEW MINISTRY",
+    caption: "고향사랑기부 및 마약범죄 근절 현장점검",
+    src: asset("/photos/07-new-ministry.jpg"),
+    alt: "윤호중 장관 제주 현장점검",
   },
 };
 
@@ -36,6 +44,9 @@ export default function CategorySection({ category, index }: Props) {
               label={categoryImageHints[category.id].label}
               caption={categoryImageHints[category.id].caption}
               accent={category.color.accent}
+              src={categoryImageHints[category.id].src}
+              alt={categoryImageHints[category.id].alt}
+              credit="출처 : 행정안전부 · 정책브리핑"
             />
           </div>
         )}

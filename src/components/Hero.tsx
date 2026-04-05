@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { heroStats } from "@/data/achievements";
 import CountUp from "./CountUp";
 import ImageSlot from "./ImageSlot";
+import { asset } from "@/lib/asset";
 
 export default function Hero() {
   return (
@@ -65,9 +66,13 @@ export default function Hero() {
       <div className="pointer-events-none absolute right-12 top-1/2 z-[5] hidden w-[280px] -translate-y-1/2 text-amber-300/90 lg:block xl:right-20 xl:w-[320px]">
         <ImageSlot
           variant="portrait"
-          label="MINISTER PORTRAIT"
-          caption="장관 공식 포트레이트 · 흑백 예정"
+          label="YOON HO-JOONG"
+          caption="제5대 행정안전부 장관"
           accent="text-amber-300"
+          src={asset("/photos/minister-portrait.png")}
+          alt="윤호중 행정안전부 장관 공식 사진"
+          credit="출처 : 행정안전부"
+          objectPosition="center top"
         />
       </div>
 

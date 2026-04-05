@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Category } from "@/data/achievements";
 import CountUp from "@/components/CountUp";
 import ImageSlot from "@/components/ImageSlot";
+import { asset } from "@/lib/asset";
 
 type Props = { category: Category };
 
@@ -34,9 +35,12 @@ export default function CategoryBigNumber({ category }: Props) {
         {/* Header image slot */}
         <div className={`mb-16 ${category.color.accent}`}>
           <ImageSlot
-            label="HERO IMAGE · 02 민생회복"
-            caption="전통시장 · 상품권 지급 현장 이미지 예정"
+            label="02 · LIVELIHOOD RECOVERY"
+            caption="마을공동체 우수사례 현장방문"
             accent={category.color.accent}
+            src={asset("/photos/02-livelihood.jpg")}
+            alt="윤호중 장관 마을공동체 우수사례 현장방문"
+            credit="출처 : 행정안전부 · 정책브리핑"
           />
         </div>
 
