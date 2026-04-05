@@ -1,7 +1,12 @@
+import ShareButtons from "./ShareButtons";
+
 export default function Footer() {
   return (
     <footer className="bg-[#05070d] py-16 text-white/60">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mb-16 border-b border-white/10 pb-16">
+          <ShareButtons />
+        </div>
         <div className="flex flex-col justify-between gap-10 md:flex-row md:gap-6">
           <div>
             <div className="text-sm font-bold tracking-widest text-amber-300">
