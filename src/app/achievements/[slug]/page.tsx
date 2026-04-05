@@ -90,6 +90,29 @@ export default async function CategoryDetailPage({
                       </div>
                     </div>
                   )}
+                  {a.sources && a.sources.length > 0 && (
+                    <div className="mt-8 border-t border-white/10 pt-6">
+                      <div className="text-xs font-bold tracking-widest opacity-60">
+                        SOURCES
+                      </div>
+                      <ul className="mt-3 space-y-2 text-sm">
+                        {a.sources.map((s, si) => (
+                          <li key={si} className="flex gap-2 opacity-75 hover:opacity-100">
+                            <span className="opacity-50">[{si + 1}]</span>
+                            <a
+                              href={s.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="underline decoration-white/30 underline-offset-4 transition hover:decoration-white"
+                            >
+                              {s.label}
+                            </a>
+                            <span className="opacity-50">· {s.publisher}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </article>
             ))}
