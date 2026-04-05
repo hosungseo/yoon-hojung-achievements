@@ -125,9 +125,9 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.35 }}
             className="text-display text-[clamp(2.75rem,9vw,7.5rem)] text-balance"
           >
-            77년 만의 변화,
+            약속은,
             <br />
-            <span className="text-amber-300">윤호중</span>의 기록.
+            <span className="text-amber-300">제도</span>로 남았습니다.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -137,7 +137,7 @@ export default function Hero() {
           >
             검찰청 77년 만의 폐지 · 1호 통합특별시 · 9조원 민생회복 · AI 민주정부.
             <br className="hidden md:inline" />
-            &ldquo;국민 삶에 플러스, 행복안전부&rdquo; — 제도로 남긴 약속을 기록합니다.
+            제5대 행정안전부 장관 윤호중이 국민의 하루 곁에 새긴 제도의 기록.
           </motion.p>
         </div>
 
