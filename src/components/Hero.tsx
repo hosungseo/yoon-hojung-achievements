@@ -60,7 +60,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.35 }}
             className="text-display text-[clamp(2.75rem,9vw,7.5rem)] text-balance"
           >
-            국민주권 정부,
+            77년 만의 변화,
             <br />
             <span className="text-amber-300">윤호중</span>의 기록.
           </motion.h1>
@@ -70,9 +70,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-8 max-w-3xl text-lg text-white/75 md:text-xl"
           >
-            정부혁신 · 지방분권 · AI 디지털정부 · 재난안전 · 민생치안.
+            검찰청 77년 만의 폐지 · 1호 통합특별시 · 9조원 민생회복 · AI 민주정부.
             <br className="hidden md:inline" />
-            제도로 뒷받침한 국민주권 정부의 성과를 기록합니다.
+            &ldquo;국민 삶에 플러스, 행복안전부&rdquo; — 제도로 남긴 약속을 기록합니다.
           </motion.p>
         </div>
 

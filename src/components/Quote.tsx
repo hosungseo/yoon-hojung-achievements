@@ -14,12 +14,14 @@ export default function Quote() {
           className="text-[clamp(1.75rem,4.5vw,3.75rem)] font-black leading-[1.15] tracking-tight text-slate-900 text-balance"
         >
           <span className="text-[#c8102e]">“</span>
-          국민의 삶에 플러스가 되는 정부,
+          민생을 회복하고,
           <br />
-          지방과 현장에서 답을 찾는 정부.
+          국민께 평온한 일상을
           <br />
-          그것이 우리가 만들어야 할{" "}
-          <span className="text-[#c8102e]">국민주권 정부</span>입니다.
+          되돌려 드리는 것.
+          <br />
+          그것이 정부의{" "}
+          <span className="text-[#c8102e]">첫 번째 책무</span>입니다.
           <span className="text-[#c8102e]">”</span>
         </motion.blockquote>
         <motion.div
